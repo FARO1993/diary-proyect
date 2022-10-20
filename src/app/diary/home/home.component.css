@@ -38,7 +38,7 @@ body{
   }
 
   #back {
-    position: absolute;
+    position: fixed;
     padding: 0;
     margin: 0;
     top: 0;
@@ -253,6 +253,13 @@ body{
   img{
     width: 450px;
     height: 300px;
+  }
+
+  @media (max-width: 600px) {
+    img {
+      width: 200px;
+    height: 150px;
+    }
   }
 
   .back {

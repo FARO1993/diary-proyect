@@ -1,0 +1,68 @@
+<div *ngIf="!viewHeart">
+  <div>
+    <div id="back"></div>
+    <div class="star-1 stars"></div>
+    <div class="star-2 stars"></div>
+    <div class="star-3 stars"></div>
+  </div>
+  <article *ngIf="!in" style="position: fixed; margin-top: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <div>
+      <h1 class="animate__animated animate__fadeIn" style="color: black;">Holis.. Bienvenida a mi mundo..</h1>
+      <h2 class="animate__animated animate__fadeIn" style="color: black;">Presiona continuar para entrar..</h2>
+      <button (click)="entrar()" class="animate__animated animate__fadeIn" type="button" class="btn btn-info" style="color: black;">Continuar</button>
+    </div>
+  </article>
+  <div *ngIf="!in" style="margin-top: 250px;" class="penguin">
+    <div class="penguin-bottom">
+      <div class="right-hand"></div>
+      <div class="left-hand"></div>
+      <div class="right-feet"></div>
+      <div class="left-feet"></div>
+    </div>
+    <div class="penguin-top">
+      <div class="right-cheek"></div>
+      <div class="left-cheek"></div>
+      <div class="belly"></div>
+      <div class="right-eye">
+        <div class="sparkle"></div>
+      </div>
+      <div class="left-eye">
+        <div class="sparkle"></div>
+      </div>
+      <div class="blush-right"></div>
+      <div class="blush-left"></div>
+      <div class="beak-top"></div>
+      <div class="beak-bottom"></div>
+    </div>
+  </div>
+
+  <div class="animate__animated animate__fadeIn" style=" padding: 10px; position: fixed; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;" 
+       *ngIf="in && !isBuscar">
+    <p style="margin-top: 50px; color: black;">Genial! Ya estás acá, y no te imaginas lo contento que me pone. Ahora vamos a hacer una búsqueda para ver que encontramos en mi mundo...</p>
+    <img src="assets/gatitoMesa.png" alt="">
+    <button (click)="buscar()" class="animate__animated animate__fadeIn" type="button" class="btn btn-info" style="color: black;">Buscar</button>
+  </div>
+
+  <div class="animate__animated animate__fadeIn" style=" padding: 10px; position: fixed; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;" *ngIf="isBuscar">
+    <img src="assets/gatitoCompu.png" alt="">
+    <h3>{{ !isVer ? 'Estoy buscando.. esto puede demorar un ratito.. usted me entiende..' : 'Genial! Algo encontré!'}}</h3>
+    <div *ngIf="!isVer" class="spinner-border text-primary" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <button *ngIf="isVer" style="margin-top: 10px;" (click)="ver()" type="button" class="btn btn-info" style="color: black;">Ver</button>
+  </div>
+</div>
+
+<div *ngIf="viewHeart">
+  <div>
+    <div class="back"></div>
+    <div class="heart"></div>
+  </div>
+  <div class="animate__animated animate__fadeIn" style=" padding: 10px; position: fixed; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center;">
+    <h1 style="color: black;">Llegamos.... Encontramos mi corazón </h1>
+    <p *ngIf="viewP" style="color: black;">Está latiendo de felicidad, de que estás acá. Podría decirte tantas cosas pero no encuentro las palabras justas, podría estar horas y horas y horas repitiendote todo lo que siento.</p>
+    <h3 *ngIf="viewContent" style="color: black;">Simplemente...</h3>
+    <h1 *ngIf="viewContent" style="color: red">TE AMO</h1>
+    <img *ngIf="viewImage" style="margin-top: 250px; padding: 30px;" src="assets/gatitoCorazon.png" alt="">
+  </div>
+</div>
